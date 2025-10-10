@@ -19,5 +19,14 @@
     "password": "pass2",
     "expiresAt": "2025-11-30",
     "allowOffline": true
+  },
+
+  { 
+    "id": "973194dac77f1911",
+    "username": "admin",
+    "password": "admin",
+    "expiresAt": "2025-11-30",
+    "allowOffline": true
   }
+  
 ]
