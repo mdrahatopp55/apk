@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>King Keyboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.keyboard-box {
+    background: #020617;
+    padding: 15px;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 0 25px rgba(0,255,255,.2);
+}
+
+textarea {
+    width: 100%;
+    height: 90px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+.keys {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 6px;
+}
+
+button {
+    padding: 12px 0;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #1e293b, #020617);
+    color: #e5e7eb;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: inset 0 0 5px rgba(255,255,255,.1);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.wide {
+    grid-column: span 5;
+}
+
+.space {
+    grid-column: span 10;
+}
+</style>
+</head>
+
+<body>
+
+<div class="keyboard-box">
+    <textarea id="output" placeholder="Type here... 👑"></textarea>
+
+    <div class="keys">
+        <button onclick="add('Q')">Q</button>
+        <button onclick="add('W')">W</button>
+        <button onclick="add('E')">E</button>
+        <button onclick="add('R')">R</button>
+        <button onclick="add('T')">T</button>
+        <button onclick="add('Y')">Y</button>
+        <button onclick="add('U')">U</button>
+        <button onclick="add('I')">I</button>
+        <button onclick="add('O')">O</button>
+        <button onclick="add('P')">P</button>
+
+        <button onclick="add('A')">A</button>
+        <button onclick="add('S')">S</button>
+        <button onclick="add('D')">D</button>
+        <button onclick="add('F')">F</button>
+        <button onclick="add('G')">G</button>
+        <button onclick="add('H')">H</button>
+        <button onclick="add('J')">J</button>
+        <button onclick="add('K')">K</button>
+        <button onclick="add('L')">L</button>
+        <button onclick="back()">⌫</button>
+
+        <button onclick="add('Z')">Z</button>
+        <button onclick="add('X')">X</button>
+        <button onclick="add('C')">C</button>
+        <button onclick="add('V')">V</button>
+        <button onclick="add('B')">B</button>
+        <button onclick="add('N')">N</button>
+        <button onclick="add('M')">M</button>
+        <button onclick="add('.')">.</button>
+        <button onclick="add('?')">?</button>
+        <button onclick="clearAll()">CLR</button>
+
+        <button class="space" onclick="add(' ')">SPACE 👑</button>
+    </div>
+</div>
+
+<script>
+const out = document.getElementById("output");
+
+function add(char) {
+    out.value += char;
+}
+
+function back() {
+    out.value = out.value.slice(0, -1);
+}
+
+function clearAll() {
+    out.value = "";
+}
+</script>
+
+</body>
+</html>
